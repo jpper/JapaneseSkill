@@ -9,7 +9,7 @@ import {ToastController} from '@ionic/angular';
   styleUrls: ['./job-details.page.scss'],
 })
 export class JobDetailsPage implements OnInit {
-
+  id = null;
   job: Job = {
     title: '',
     company: '',
@@ -27,9 +27,12 @@ export class JobDetailsPage implements OnInit {
   }
 
   ngOnInit() {
-    const id = this.activatedRoute.snapshot.paramMap.get('id');
-    if (id) {
-      this.jobService.getJob(id).subscribe(job => {
+    this.id = this.activatedRoute.snapshot.paramMap.get('id');
+  }
+
+  ionViewWillEnter() {
+    if (this.id) {
+      this.jobService.getJob(this.id).subscribe(job => {
         this.job = job;
       });
     }
