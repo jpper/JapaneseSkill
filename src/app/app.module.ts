@@ -9,6 +9,20 @@ import { StatusBar } from '@ionic-native/status-bar/ngx';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { AngularFirestoreModule, FirestoreSettingsToken } from '@angular/fire/firestore';
+
+const firebaseConfig = {
+  apiKey: 'AIzaSyAxMoy7beZdNlo6Zzw-I3vl58M5fF-7v90',
+  authDomain: 'japan-info-jobs.firebaseapp.com',
+  databaseURL: 'https://japan-info-jobs.firebaseio.com',
+  projectId: 'japan-info-jobs',
+  storageBucket: 'japan-info-jobs.appspot.com',
+  messagingSenderId: '15907976341',
+  appId: '1:15907976341:web:77531a2c5f5551aa'
+};
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
