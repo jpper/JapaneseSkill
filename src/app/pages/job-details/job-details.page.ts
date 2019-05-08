@@ -47,6 +47,15 @@ export class JobDetailsPage implements OnInit {
     });
   }
 
+  deleteJob() {
+    this.jobService.deleteJob(this.job.id).then(() => {
+      this.router.navigateByUrl('/');
+      this.showToast('Job deleted');
+    }, err => {
+      this.showToast('There was a problem deleting your job');
+    });
+  }
+
   updateJob() {
     this.jobService.updateJob(this.job).then(() => {
       this.showToast('Job updated');

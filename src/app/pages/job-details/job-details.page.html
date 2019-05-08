@@ -23,3 +23,12 @@
   </ion-toolbar>
 </ion-footer>
 
+<ion-footer *ngIf="job.id">
+  <ion-row no-padding text-center>
+    <ion-col size="6">
+      <ion-button expand="block" fill="outline" color="danger" (click)="deleteJob()">
+
+      </ion-button>
+    </ion-col>
+  </ion-row>
+</ion-footer>
