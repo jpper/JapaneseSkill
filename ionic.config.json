@@ -1,5 +1,7 @@
 {
   "name": "jobs-app-ionic",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
