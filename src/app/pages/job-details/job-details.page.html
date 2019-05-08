@@ -9,8 +9,24 @@
 
 <ion-content>
   <ion-item>
-    <ion-label position="stacked">Name</ion-label>
-    <ion-textarea [(ngModel)]="job.title" rows="8"></ion-textarea>
+    <ion-label position="stacked">Title</ion-label>
+    <ion-textarea [(ngModel)]="job.title"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Company</ion-label>
+    <ion-textarea [(ngModel)]="job.company"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Industry</ion-label>
+    <ion-textarea [(ngModel)]="job.industry"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Location</ion-label>
+    <ion-textarea [(ngModel)]="job.location"></ion-textarea>
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Salary</ion-label>
+    <ion-textarea [(ngModel)]="job.salary"></ion-textarea>
   </ion-item>
 </ion-content>
 
