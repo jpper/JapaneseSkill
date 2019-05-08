@@ -4,12 +4,12 @@ import {map, take} from 'rxjs/operators';
 import {Observable} from 'rxjs';
 
 export interface Job {
-  id?: string,
-  title: string,
-  company: string,
-  industry: string,
-  location: string,
-  salary: string,
+  id?: string;
+  title: string;
+  company: string;
+  industry: string;
+  location: string;
+  salary: string;
 }
 
 @Injectable({
@@ -42,7 +42,7 @@ export class JobService {
       take(1),
       map(job => {
         job.id = id;
-        return job
+        return job;
       })
     );
   }
