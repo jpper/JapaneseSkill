@@ -10,13 +10,7 @@ import {ToastController} from '@ionic/angular';
 })
 export class JobDetailsPage implements OnInit {
   id = null;
-  job: Job = {
-    title: '',
-    company: '',
-    industry: '',
-    location: '',
-    salary: ''
-  };
+  job: Job = null;
 
   constructor(
     private activatedRoute: ActivatedRoute,
