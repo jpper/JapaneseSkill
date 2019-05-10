@@ -10,23 +10,23 @@
 <ion-content>
   <ion-item>
     <ion-label position="stacked">Title</ion-label>
-    <ion-textarea [(ngModel)]="job.title"></ion-textarea>
+    {{ job.title }}
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Company</ion-label>
-    <ion-textarea [(ngModel)]="job.company"></ion-textarea>
+    {{ job.company }}
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Industry</ion-label>
-    <ion-textarea [(ngModel)]="job.industry"></ion-textarea>
+    {{ job.industry }}
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Location</ion-label>
-    <ion-textarea [(ngModel)]="job.location"></ion-textarea>
+    {{ job.location }}
   </ion-item>
   <ion-item>
     <ion-label position="stacked">Salary</ion-label>
-    <ion-textarea [(ngModel)]="job.salary"></ion-textarea>
+    {{ job.salary }}
   </ion-item>
 </ion-content>
 
@@ -41,16 +41,10 @@
 
 <ion-footer *ngIf="job.id">
   <ion-row no-padding text-center>
-    <ion-col size="6">
-      <ion-button expand="block" fill="outline" color="danger" (click)="deleteJob()">
-        <ion-icon name="trash" slot="start"></ion-icon>
-        Delete
-      </ion-button>
-    </ion-col>
-    <ion-col size="6">
-      <ion-button expand="block" fill="solid" color="success" (click)="updateJob()">
+    <ion-col>
+      <ion-button expand="block" fill="solid" color="success" (click)="applyForJob()">
         <ion-icon name="save" slot="start"></ion-icon>
-        Update
+        Apply
       </ion-button>
     </ion-col>
   </ion-row>

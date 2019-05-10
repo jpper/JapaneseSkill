@@ -64,4 +64,8 @@ export class JobDetailsPage implements OnInit {
       duration: 2000
     }).then(toast => toast.present());
   }
+
+  applyForJob() {
+
+  }
 }
