@@ -46,7 +46,7 @@
 <ion-footer *ngIf="job.id">
   <ion-row no-padding text-center>
     <ion-col>
-      <ion-button expand="block" fill="solid" color="success" (click)="applyForJob()">
+      <ion-button expand="block" fill="solid" color="success" [routerLink]="['/apply', job.id]">
         <ion-icon name="add-circle-outline" slot="start"></ion-icon>
         Apply
       </ion-button>
