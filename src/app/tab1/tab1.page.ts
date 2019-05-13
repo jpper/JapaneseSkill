@@ -19,14 +19,14 @@ export class Tab1Page implements OnInit {
     this.jobs = this.jobService.getJobs();
   }
 
-  /*
   updateJobs() {
-    let queryTextLower = this.queryText.toLowerCase();
-    let filteredJobs = [];
-    let jobResults = _.filter(this.jobs, j => (j as any).title.toLowerCase().includes(queryTextLower));
+    /*
+    const queryTextLower = this.queryText.toLowerCase();
+    const jobResults = _.filter(this.jobs, j => (j as any).title.toLowerCase().includes(queryTextLower));
     if (jobResults) {
-      filteredJobs.push(jobResults);
+      this.jobs = jobResults;
     }
-    */
+     */
+  }
 
 }
