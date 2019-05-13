@@ -10,6 +10,7 @@ export interface Job {
   industry: string;
   location: string;
   salary: string;
+  description: string;
 }
 
 @Injectable({
