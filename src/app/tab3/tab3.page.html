@@ -10,17 +10,12 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>Name:</ion-label>
-      Jonny Ramen
+      <ion-label>Name (English):</ion-label>
+      <ion-input placeholder="Name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Country:</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option value="japan">Japan</ion-select-option>
-        <ion-select-option value="usa">United States of America</ion-select-option>
-        <ion-select-option value="australia">Australia</ion-select-option>
-        <ion-select-option value="mexico">Mexico</ion-select-option>
-      </ion-select>
+      <ion-label>Name (katakana):</ion-label>
+      <ion-input placeholder="ナマエ"></ion-input>
     </ion-item>
     <ion-item>
       <ion-label>Industry:</ion-label>
@@ -30,8 +25,18 @@
         <ion-select-option value="information-technology">Information Technology</ion-select-option>
         <ion-select-option value="media">Media</ion-select-option>
       </ion-select>
-
     </ion-item>
   </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>My Resumes</ion-card-title>
+    </ion-card-header>
+    <ion-list>
+      <ion-item>Resume 1</ion-item>
+      <ion-item>Resume 2</ion-item>
+      <ion-item>Resume 3</ion-item>
+    </ion-list>
+  </ion-card>
 
 </ion-content>
