@@ -18,37 +18,48 @@
       <ion-input placeholder="ナマエ"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Age</ion-label>26
+      <ion-label>Age</ion-label>
+      26
     </ion-item>
     <ion-item>
-      <ion-label>Birth Date</ion-label>Sample date
+      <ion-label>Birth Date</ion-label>
+      Sample date
     </ion-item>
     <ion-item>
-      <ion-label>Gender</ion-label>Male
+      <ion-label>Gender</ion-label>
+      Male
     </ion-item>
     <ion-item>
-      <ion-label>City of Residence</ion-label>Tokyo
+      <ion-label>City of Residence</ion-label>
+      Tokyo
     </ion-item>
     <ion-item>
-      <ion-label>最寄り駅</ion-label>Closest Station
+      <ion-label>最寄り駅</ion-label>
+      Closest Station
     </ion-item>
     <ion-item>
-      <ion-label>Country of Citizenship</ion-label>USA
+      <ion-label>Country of Citizenship</ion-label>
+      USA
     </ion-item>
     <ion-item>
-      <ion-label>Email Address</ion-label>Emeru
+      <ion-label>Email Address</ion-label>
+      Emeru
     </ion-item>
     <ion-item>
-      <ion-label>Visa Status</ion-label>ESHIS
+      <ion-label>Visa Status</ion-label>
+      ESHIS
     </ion-item>
     <ion-item>
-      <ion-label>Japanese Driver's License</ion-label>N
+      <ion-label>Japanese Driver's License</ion-label>
+      N
     </ion-item>
     <ion-item>
-      <ion-label>Final Education</ion-label>Gakushi
+      <ion-label>Final Education</ion-label>
+      Gakushi
     </ion-item>
     <ion-item>
-      <ion-label>Desired Start Date</ion-label>ASAP
+      <ion-label>Desired Start Date</ion-label>
+      ASAP
     </ion-item>
     <ion-item>
       <ion-label>Industry:</ion-label>
@@ -65,11 +76,17 @@
     <ion-card-header>
       <ion-card-title>My Resumes</ion-card-title>
     </ion-card-header>
-    <ion-list>
-      <ion-item [routerLink]="['/resume']">Resume 1</ion-item>
-      <ion-item>Resume 2</ion-item>
-      <ion-item>Resume 3</ion-item>
-    </ion-list>
+    <ion-item>Sample Resume</ion-item>
+    <ion-item *ngFor="let resume of (resumes | async)" [routerLink]="['/resume', resume.id]">
+      <ion-grid>
+        <ion-row>
+          <h3><strong>{{ resume.title }}</strong></h3>
+        </ion-row>
+        <ion-row>
+          <p>Career Objectives: {{ resume.careerObjectives }}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
   </ion-card>
 
 </ion-content>

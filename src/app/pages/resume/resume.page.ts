@@ -9,12 +9,10 @@ import {Observable} from 'rxjs';
   styleUrls: ['./resume.page.scss'],
 })
 export class ResumePage implements OnInit {
-  private resumes: Observable<Resume[]>;
 
   constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
-    this.resumes = this.resumeService.getResumes();
   }
 
 }
