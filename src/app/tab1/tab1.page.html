@@ -6,6 +6,10 @@
   </ion-toolbar>
 </ion-header>
 
+<ion-toolbar>
+  <ion-searchbar placeholder="Search Listings" [(ngModel)]="queryText" (ionInput)="updateJobs()"></ion-searchbar>
+</ion-toolbar>
+
 <ion-content>
 
   <!-- Don't need a fab on this page now
@@ -16,9 +20,14 @@
   </ion-fab>
   -->
 
-  <ion-toolbar>
-    <ion-searchbar placeholder="Search Listings" [(ngModel)]="queryText" (ionInput)="updateJobs()"></ion-searchbar>
-  </ion-toolbar>
+  <ion-refresher slot="fixed" (ionRefresh)="updateJobs()">
+    <ion-refresher-content>
+      pullingIcon="arrow-dropdown"
+      pullingText="Pull to refresh"
+      refreshingSpinner="circles"
+      refreshingText="Refreshing...">
+    </ion-refresher-content>
+  </ion-refresher>
 
   <ion-list>
     <ion-item *ngFor="let job of (jobs | async)" [routerLink]="['/job', job.id]">

@@ -29,4 +29,7 @@ export class Tab1Page implements OnInit {
      */
   }
 
+  doRefresh($event: CustomEvent<any>) {
+
+  }
 }
