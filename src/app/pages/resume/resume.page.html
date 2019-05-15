@@ -8,5 +8,16 @@
 </ion-header>
 
 <ion-content>
-
+  <ion-list>
+    <ion-item *ngFor="let resume of (resumes | async)">
+      <ion-grid>
+        <ion-row>
+          <h3><strong>{{ resume.title }}</strong></h3>
+        </ion-row>
+        <ion-row>
+          <p>Career Objectives: {{ resume.careerObjectives }}</p>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-list>
 </ion-content>
