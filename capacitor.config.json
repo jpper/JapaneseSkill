@@ -1,6 +1,6 @@
 {
-  "appId": "io.ionic.starter",
-  "appName": "jobs-app-ionic",
+  "appId": "io.jonnyramen.jobsapp",
+  "appName": "Japan Info Jobs",
   "bundledWebRuntime": false,
   "npmClient": "npm",
   "webDir": "www"
