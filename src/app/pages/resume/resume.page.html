@@ -3,7 +3,7 @@
     <ion-buttons slot="start">
       <ion-back-button defaultHref="/"></ion-back-button>
     </ion-buttons>
-    <ion-title>Edit Resume</ion-title>
+    <ion-title>Resume</ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -13,7 +13,24 @@
     {{ resume.title }}
   </ion-item>
   <ion-item>
+    <ion-label position="stacked">Language Abilities</ion-label>
+    {{ resume.languageAbilities }}
+  </ion-item>
+  <ion-item>
     <ion-label position="stacked">Career Objectives</ion-label>
     {{ resume.careerObjectives }}
   </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Specialties and Skills</ion-label>
+    {{ resume.specialties }}
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Educational History</ion-label>
+    {{ resume.educationalHistory }}
+  </ion-item>
+  <ion-input>
+    <ion-label position="stacked">Work History</ion-label>
+    {{ resume.workHistory }}
+  </ion-input>
 </ion-content>
