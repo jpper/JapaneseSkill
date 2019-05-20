@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 import {AngularFirestore, AngularFirestoreCollection} from '@angular/fire/firestore';
-import {map} from 'rxjs/operators';
+import {map, take} from 'rxjs/operators';
 import {Job} from './job.service';
 
 export interface Resume {
@@ -38,4 +38,15 @@ export class ResumeService {
   getResumes() {
     return this.resumes;
   }
+
+  getResume(id: string): Observable<Resume> {
+    return this.resumeCollection.doc<Resume>(id).valueChanges().pipe(
+      take(1),
+      map(resume => {
+        resume.id = id;
+        return resume;
+      })
+    );
+  }
+
 }

@@ -8,17 +8,12 @@
 </ion-header>
 
 <ion-content>
-  <p>Welcome to the Resume page</p>
-  <ion-list>
-    <ion-item *ngFor="let resume of (resumes | async)">
-      <ion-grid>
-        <ion-row>
-          <h3><strong>{{ resume.title }}</strong></h3>
-        </ion-row>
-        <ion-row>
-          <p>Career Objectives: {{ resume.careerObjectives }}</p>
-        </ion-row>
-      </ion-grid>
-    </ion-item>
-  </ion-list>
+  <ion-item>
+    <ion-label position="stacked">Title</ion-label>
+    {{ resume.title }}
+  </ion-item>
+  <ion-item>
+    <ion-label position="stacked">Career Objectives</ion-label>
+    {{ resume.careerObjectives }}
+  </ion-item>
 </ion-content>
