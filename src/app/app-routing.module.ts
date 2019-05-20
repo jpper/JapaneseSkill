@@ -8,7 +8,9 @@ const routes: Routes = [
   { path: 'job/:id', loadChildren: './pages/job-details/job-details.module#JobDetailsPageModule' },
   { path: 'apply/:id', loadChildren: './pages/apply/apply.module#ApplyPageModule' },
   { path: 'home', loadChildren: './pages/home/home.module#HomePageModule' },
-  { path: 'resume', loadChildren: './pages/resume/resume.module#ResumePageModule' }
+  { path: 'resume', loadChildren: './pages/resume/resume.module#ResumePageModule' },
+  { path: 'resume/:id', loadChildren: './pages/resume/resume.module#ResumePageModule' }
+
 ];
 @NgModule({
   imports: [
