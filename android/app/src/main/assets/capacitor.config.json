@@ -1,7 +1,0 @@
-{
-  "appId": "io.ionic.starter",
-  "appName": "jobs-app-ionic",
-  "bundledWebRuntime": false,
-  "npmClient": "npm",
-  "webDir": "www"
-}
