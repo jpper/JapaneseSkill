@@ -10,17 +10,56 @@
 
   <ion-list>
     <ion-item>
-      <ion-label>Name:</ion-label>
-      Jonny Ramen
+      <ion-label>Name (English):</ion-label>
+      <ion-input placeholder="Name"></ion-input>
     </ion-item>
     <ion-item>
-      <ion-label>Country:</ion-label>
-      <ion-select multiple="true">
-        <ion-select-option value="japan">Japan</ion-select-option>
-        <ion-select-option value="usa">United States of America</ion-select-option>
-        <ion-select-option value="australia">Australia</ion-select-option>
-        <ion-select-option value="mexico">Mexico</ion-select-option>
-      </ion-select>
+      <ion-label>Name (katakana):</ion-label>
+      <ion-input placeholder="ナマエ"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Age</ion-label>
+      26
+    </ion-item>
+    <ion-item>
+      <ion-label>Birth Date</ion-label>
+      Sample date
+    </ion-item>
+    <ion-item>
+      <ion-label>Gender</ion-label>
+      Male
+    </ion-item>
+    <ion-item>
+      <ion-label>City of Residence</ion-label>
+      Tokyo
+    </ion-item>
+    <ion-item>
+      <ion-label>最寄り駅</ion-label>
+      Closest Station
+    </ion-item>
+    <ion-item>
+      <ion-label>Country of Citizenship</ion-label>
+      USA
+    </ion-item>
+    <ion-item>
+      <ion-label>Email Address</ion-label>
+      Emeru
+    </ion-item>
+    <ion-item>
+      <ion-label>Visa Status</ion-label>
+      ESHIS
+    </ion-item>
+    <ion-item>
+      <ion-label>Japanese Driver's License</ion-label>
+      N
+    </ion-item>
+    <ion-item>
+      <ion-label>Final Education</ion-label>
+      Gakushi
+    </ion-item>
+    <ion-item>
+      <ion-label>Desired Start Date</ion-label>
+      ASAP
     </ion-item>
     <ion-item>
       <ion-label>Industry:</ion-label>
@@ -30,8 +69,27 @@
         <ion-select-option value="information-technology">Information Technology</ion-select-option>
         <ion-select-option value="media">Media</ion-select-option>
       </ion-select>
-
     </ion-item>
   </ion-list>
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>My Resumes</ion-card-title>
+    </ion-card-header>
+    <ion-item *ngFor="let resume of (resumes | async)">
+      <ion-grid>
+        <ion-row>
+          <ion-col size="10">
+            {{ resume.title }}
+          </ion-col>
+          <ion-col size="2" [routerLink]="['/resume', resume.id]">
+            <ion-button>
+              <ion-icon slot="icon-only" name="create"></ion-icon>
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-item>
+  </ion-card>
 
 </ion-content>

@@ -35,6 +35,15 @@ const routes: Routes = [
         ]
       },
       {
+        path: 'resumestab',
+        children: [
+          {
+            path: '',
+            loadChildren: '../resumestab/resumestab.module#ResumesTabPageModule'
+          }
+        ]
+      },
+      {
         path: 'tab3',
         children: [
           {
