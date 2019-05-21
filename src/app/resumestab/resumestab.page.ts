@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Resume, ResumeService} from '../services/resume.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-resumestab',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./resumestab.page.scss'],
 })
 export class ResumestabPage implements OnInit {
+  private resumes: Observable<Resume[]>;
 
-  constructor() { }
+  constructor(private resumeService: ResumeService) { }
 
   ngOnInit() {
+    this.resumes = this.resumeService.getResumes();
   }
 
 }

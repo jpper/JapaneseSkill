@@ -8,12 +8,9 @@ import {Resume, ResumeService} from '../services/resume.service';
   styleUrls: ['tab3.page.scss']
 })
 export class Tab3Page implements OnInit {
-  private resumes: Observable<Resume[]>;
-
-  constructor(private resumeService: ResumeService) {
+  constructor() {
   }
 
   ngOnInit() {
-    this.resumes = this.resumeService.getResumes();
   }
 }
