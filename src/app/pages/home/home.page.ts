@@ -15,7 +15,7 @@ export class HomePage implements OnInit {
   userInfo: any = {};
 
   constructor(public fb: Facebook,
-              public http:Http,
+              public http: Http,
               private afauth: AngularFireAuth) {
 
   }
