@@ -1,7 +1,9 @@
 import {Component, OnInit} from '@angular/core';
 import {Observable} from 'rxjs';
 import {Job, JobService} from '../services/job.service';
+import { LoadingController } from '@ionic/angular';
 import * as _ from 'lodash';
+import {filter} from 'rxjs/operators';
 
 @Component({
   selector: 'app-tab1',
