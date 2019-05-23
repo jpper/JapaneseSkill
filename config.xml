@@ -86,4 +86,5 @@
         <variable name="APP_ID" value="2326669580935319" />
         <variable name="APP_NAME" value="Japan Info Jobs" />
     </plugin>
+    <plugin name="cordova-plugin-local-notification" spec="~0.9.0-beta.2" />
 </widget>
