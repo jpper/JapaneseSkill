@@ -15,14 +15,15 @@ import {AngularFireDatabaseModule} from '@angular/fire/database';
 import { AngularFirestoreModule, FirestoreSettingsToken} from '@angular/fire/firestore';
 import { AngularFireAuthModule} from '@angular/fire/auth';
 
+// tslint:disable-next-line:prefer-const
 const firebaseConfig = {
-    apiKey: 'AIzaSyAxMoy7beZdNlo6Zzw-I3vl58M5fF-7v90',
-    authDomain: 'japan-info-jobs.firebaseapp.com',
-    databaseURL: 'https://japan-info-jobs.firebaseio.com',
-    projectId: 'japan-info-jobs',
-    storageBucket: 'japan-info-jobs.appspot.com',
-    messagingSenderId: '15907976341',
-    appId: '1:15907976341:web:77531a2c5f5551aa'
+    apiKey: 'AIzaSyA-EZWW5j1GoQagmT20lX-h5zsQp-vv-2k',
+    authDomain: 'japanese-skill.firebaseapp.com',
+    databaseURL: 'https://japanese-skill.firebaseio.com',
+    projectId: 'japanese-skill',
+    storageBucket: 'japanese-skill.appspot.com',
+    messagingSenderId: '344264279394',
+    appId: '1:344264279394:web:946883dd5152f4d9'
 };
 
 @NgModule({
