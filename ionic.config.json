@@ -1,8 +1,5 @@
 {
-  "name": "japanese-skill",
-  "integrations": {
-    "capacitor": {},
-    "cordova": {}
-  },
+  "name": "learn-japanese",
+  "integrations": {},
   "type": "angular"
 }
