@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {Deck, DeckService} from '../../services/deck.service';
+import {Observable} from 'rxjs';
 
 @Component({
   selector: 'app-first-with-tabs',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./first-with-tabs.page.scss'],
 })
 export class FirstWithTabsPage implements OnInit {
+  private decks: Observable<Deck[]>;
 
-  constructor() { }
+  constructor(private deckService: DeckService) { }
 
   ngOnInit() {
+    this.decks = this.deckService.getDecks();
   }
 
 }
