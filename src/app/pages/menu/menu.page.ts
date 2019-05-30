@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router, RouterEvent} from '@angular/router';
 
 @Component({
   selector: 'app-menu',
@@ -7,7 +8,26 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MenuPage implements OnInit {
 
-  constructor() { }
+  pages = [
+    {
+      title: 'First page with Tabs',
+      url: '/menu/first'
+    },
+    {
+      title: 'Second page blank',
+      url: '/menu/second'
+    }
+  ];
+
+  selectedPath = '';
+
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: RouterEvent) => {
+      if (event && event.url) {
+        this.selectedPath = event.url;
+      }
+    });
+  }
 
   ngOnInit() {
   }
