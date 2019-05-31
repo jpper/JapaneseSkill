@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Deck, DeckService} from '../../services/deck.service';
-import {FormBuilder} from '@angular/forms';
+import {FormBuilder, Validators} from '@angular/forms';
+import {AlertController} from '@ionic/angular';
 
 @Component({
   selector: 'app-createdeck',
@@ -9,23 +10,41 @@ import {FormBuilder} from '@angular/forms';
 })
 export class CreatedeckPage implements OnInit {
   deck: Deck = null;
-  slideOneForm: any;
+  createDeckForm: any;
+  private submitAttempt: boolean;
 
   constructor(
     deckService: DeckService,
-    public formBuilder: FormBuilder
+    public formBuilder: FormBuilder,
+    public  alertController: AlertController
+
   ) {
-    this.slideOneForm = formBuilder.group({
-      firstName: [''],
-      lastName: [''],
-      age: ['']
+    this.createDeckForm = formBuilder.group({
+      title: ['', Validators.compose([Validators.pattern('[a-zA-Z ]*'), Validators.required])],
+      level: ['', Validators.required],
     });
   }
 
   ngOnInit() {
   }
 
-  createDeck() {
-    console.log('Creating deck');
+  createDeckAttempt() {
+    this.submitAttempt = true;
+    if (!this.createDeckForm.valid) {
+      console.log('Failed to validate the deck');
+      this.presentAlert();
+    }
+
+  }
+
+  async presentAlert() {
+    const alert = await this.alertController.create({
+      header: 'Could not validate',
+      subHeader: 'Failed to validate the deck',
+      message: 'デッキを検証できませんでした.',
+      buttons: ['OK']
+    });
+
+    await alert.present();
   }
 }

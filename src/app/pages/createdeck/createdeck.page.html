@@ -11,21 +11,22 @@
 
   <ion-list lines="none">
 
-    <form [formGroup]="slideOneForm">
+    <form [formGroup]="createDeckForm">
 
       <ion-item>
-        <ion-label position="floating">First Name</ion-label>
-        <ion-input formControlName="firstName" type="text"></ion-input>
+        <ion-label position="floating">Deck Title:</ion-label>
+        <ion-input formControlName="title" type="text" [class.invalid]="!createDeckForm.controls.title.valid && (createDeckForm.controls.title.dirty || submitAttempt)"></ion-input>
+      </ion-item>
+      <ion-item *ngIf="!createDeckForm.controls.title.valid  && (createDeckForm.controls.title.dirty || submitAttempt)">
+        <p>Please enter a valid title.</p>
       </ion-item>
 
       <ion-item>
-        <ion-label position="floating">Last Name</ion-label>
-        <ion-input formControlName="lastName" type="text"></ion-input>
+        <ion-label position="floating">Difficulty Level:</ion-label>
+        <ion-input formControlName="level" type="text" [class.invalid]="!createDeckForm.controls.level.valid && (createDeckForm.controls.level.dirty || submitAttempt)"></ion-input>
       </ion-item>
-
-      <ion-item>
-        <ion-label position="floating">Age</ion-label>
-        <ion-input formControlName="age" type="number"></ion-input>
+      <ion-item *ngIf="!createDeckForm.controls.level.valid  && (createDeckForm.controls.level.dirty || submitAttempt)">
+        <p>Please enter a valid level.</p>
       </ion-item>
 
     </form>
@@ -35,7 +36,7 @@
 <ion-footer>
   <ion-row no-padding text-center>
     <ion-col>
-      <ion-button expand="block" fill="solid" color="success" [routerLink]="['/menu/first/tabs/tab1']" (click)="createDeck()">
+      <ion-button expand="block" fill="solid" color="success" (click)="createDeckAttempt()">
         <ion-icon name="add-circle-outline" slot="start"></ion-icon>
         Create Deck
       </ion-button>
