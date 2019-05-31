@@ -12,9 +12,11 @@ export class CreatedeckPage implements OnInit {
   deck: Deck = null;
   createDeckForm: any;
   private submitAttempt: boolean;
+  title: any;
+  level: any;
 
   constructor(
-    deckService: DeckService,
+    private deckService: DeckService,
     public formBuilder: FormBuilder,
     public  alertController: AlertController
 
@@ -33,6 +35,10 @@ export class CreatedeckPage implements OnInit {
     if (!this.createDeckForm.valid) {
       console.log('Failed to validate the deck');
       this.presentAlert();
+    } else {
+      this.deck.title = this.title;
+      this.deck.level = this.level;
+      this.deckService.addDeck(this.deck);
     }
 
   }
