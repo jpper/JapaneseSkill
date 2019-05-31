@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Deck, DeckService} from '../../services/deck.service';
+import {FormBuilder} from '@angular/forms';
 
 @Component({
   selector: 'app-createdeck',
@@ -8,8 +9,18 @@ import {Deck, DeckService} from '../../services/deck.service';
 })
 export class CreatedeckPage implements OnInit {
   deck: Deck = null;
+  slideOneForm: any;
 
-  constructor(deckService: DeckService) { }
+  constructor(
+    deckService: DeckService,
+    public formBuilder: FormBuilder
+  ) {
+    this.slideOneForm = formBuilder.group({
+      firstName: [''],
+      lastName: [''],
+      age: ['']
+    });
+  }
 
   ngOnInit() {
   }

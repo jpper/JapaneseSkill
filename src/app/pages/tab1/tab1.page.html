@@ -13,7 +13,7 @@
     </ion-refresher>
 
     <ion-list class="remove-space" *ngFor="let deck of (decks | async)">
-        <ion-item>
+        <ion-item [routerLink]="['/showdeck']">
             <ion-col>
                 <h3 class="remove-space">{{deck.title}}</h3>
                 <p class="remove-space">Difficulty level: {{deck.level}}</p>
