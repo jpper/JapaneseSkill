@@ -1,14 +1,42 @@
 <ion-header>
-  <ion-toolbar color="primary">
-    <ion-buttons slot="start">
-      <ion-menu-button></ion-menu-button>
-    </ion-buttons>
-    <ion-title>Home Page</ion-title>
-  </ion-toolbar>
+    <ion-toolbar color="primary">
+        <ion-buttons slot="start">
+            <ion-menu-button></ion-menu-button>
+        </ion-buttons>
+        <ion-title>Home Page</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
-    Details forward
-  </ion-button>
+    <ion-refresher slot="fixed" pullFactor="0.5" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
+
+    <ion-list class="remove-space" *ngFor="let deck of (decks | async)">
+        <ion-item>
+            <ion-col>
+                <h3 class="remove-space">{{deck.title}}</h3>
+                <p class="remove-space">Difficulty level: {{deck.level}}</p>
+            </ion-col>
+        </ion-item>
+    </ion-list>
+    <ion-list>
+        <ion-item>
+            <ion-row>Test row</ion-row>
+        </ion-item>
+    </ion-list>
+
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button routerLink="/createdeck">
+            <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+    </ion-fab>
 </ion-content>
+
+<ion-footer no-shadow>
+    <ion-toolbar position="bottom">
+        <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
+            Details forward
+        </ion-button>
+    </ion-toolbar>
+</ion-footer>
