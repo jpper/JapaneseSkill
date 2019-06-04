@@ -15,7 +15,7 @@
 
       <ion-item>
         <ion-label position="floating">Deck Title:</ion-label>
-        <ion-input [(ngModel)]="title" formControlName="title" type="text" [class.invalid]="!createDeckForm.controls.title.valid && (createDeckForm.controls.title.dirty || submitAttempt)"></ion-input>
+        <ion-input [(ngModel)]="deck.title" formControlName="title" type="text" [class.invalid]="!createDeckForm.controls.title.valid && (createDeckForm.controls.title.dirty || submitAttempt)"></ion-input>
       </ion-item>
       <ion-item *ngIf="!createDeckForm.controls.title.valid  && (createDeckForm.controls.title.dirty || submitAttempt)">
         <p>Please enter a valid title.</p>
@@ -23,7 +23,7 @@
 
       <ion-item>
         <ion-label position="floating">Difficulty Level:</ion-label>
-        <ion-input [(ngModel)]="level" formControlName="level" type="text" [class.invalid]="!createDeckForm.controls.level.valid && (createDeckForm.controls.level.dirty || submitAttempt)"></ion-input>
+        <ion-input [(ngModel)]="deck.level" formControlName="level" type="text" [class.invalid]="!createDeckForm.controls.level.valid && (createDeckForm.controls.level.dirty || submitAttempt)"></ion-input>
       </ion-item>
       <ion-item *ngIf="!createDeckForm.controls.level.valid  && (createDeckForm.controls.level.dirty || submitAttempt)">
         <p>Please enter a valid level.</p>

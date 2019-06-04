@@ -9,7 +9,10 @@ import {AlertController} from '@ionic/angular';
   styleUrls: ['./createdeck.page.scss'],
 })
 export class CreatedeckPage implements OnInit {
-  deck: Deck = null;
+  private deck: Deck = {
+    title: '',
+    level: ''
+  }
   createDeckForm: any;
   private submitAttempt: boolean;
   title: any;
@@ -36,8 +39,6 @@ export class CreatedeckPage implements OnInit {
       console.log('Failed to validate the deck');
       this.presentAlert();
     } else {
-      this.deck.title = this.title;
-      this.deck.level = this.level;
       this.deckService.addDeck(this.deck);
     }
 
