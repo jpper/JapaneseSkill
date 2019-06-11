@@ -7,6 +7,7 @@ const routes: Routes = [
   { path: 'menu', loadChildren: './pages/menu/menu.module#MenuPageModule' },
   { path: 'createdeck', loadChildren: './pages/createdeck/createdeck.module#CreatedeckPageModule' },
   { path: 'showdeck', loadChildren: './pages/showdeck/showdeck.module#ShowdeckPageModule' },
+  { path: 'showdeck/:id', loadChildren: './pages/showdeck/showdeck.module#ShowdeckPageModule' },
 ];
 
 @NgModule({
