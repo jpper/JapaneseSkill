@@ -20,17 +20,30 @@
             </ion-col>
         </ion-item>
     </ion-list>
-    <ion-list>
-        <ion-item>
-            <ion-row>Test row</ion-row>
-        </ion-item>
-    </ion-list>
 
-    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
-        <ion-fab-button routerLink="/createdeck">
+
+    <ion-fab vertical="bottom" horizontal="end">
+        <ion-fab-button>
             <ion-icon name="add"></ion-icon>
         </ion-fab-button>
+
+        <ion-fab-list side="top">
+            <ion-fab-button>
+                <ion-icon name="star"></ion-icon>
+            </ion-fab-button>
+            <ion-fab-button>
+                <ion-icon name="create"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+
+        <ion-fab-list side="start">
+            <ion-fab-button routerLink="/createdeck">
+                <ion-icon name="add"></ion-icon>
+            </ion-fab-button>
+        </ion-fab-list>
+
     </ion-fab>
+
 </ion-content>
 
 <ion-footer no-shadow>

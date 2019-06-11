@@ -10,11 +10,11 @@ export class MenuPage implements OnInit {
 
   pages = [
     {
-      title: 'First page with Tabs',
+      title: 'Decks',
       url: '/menu/first'
     },
     {
-      title: 'Second page blank',
+      title: 'About',
       url: '/menu/second'
     }
   ];
