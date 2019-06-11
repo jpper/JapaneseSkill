@@ -2,6 +2,7 @@ import {Component, OnInit} from '@angular/core';
 import {Deck, DeckService} from '../../services/deck.service';
 import {FormBuilder, Validators} from '@angular/forms';
 import {AlertController} from '@ionic/angular';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-createdeck',
@@ -21,7 +22,8 @@ export class CreatedeckPage implements OnInit {
   constructor(
     private deckService: DeckService,
     public formBuilder: FormBuilder,
-    public  alertController: AlertController
+    public  alertController: AlertController,
+    private router: Router
 
   ) {
     this.createDeckForm = formBuilder.group({
@@ -40,6 +42,7 @@ export class CreatedeckPage implements OnInit {
       this.presentAlert();
     } else {
       this.deckService.addDeck(this.deck);
+      this.router.navigateByUrl('/menu/first'); // Redirect
     }
 
   }
