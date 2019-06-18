@@ -12,7 +12,7 @@ import { AngularFireModule } from '@angular/fire';
 import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
-
+import { Facebook } from '@ionic-native/facebook/ngx'
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-EZWW5j1GoQagmT20lX-h5zsQp-vv-2k",
@@ -37,7 +37,8 @@ const firebaseConfig = {
   providers: [
     StatusBar,
     SplashScreen,
-    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
+    { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
+    Facebook
   ],
   bootstrap: [AppComponent]
 })
