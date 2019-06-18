@@ -31,6 +31,7 @@
     "@ionic/app-scripts": "^3.2.4",
     "@ionic/lab": "^2.0.2",
     "cordova-android": "8.0.0",
+    "cordova-plugin-facebook4": "4.2.1",
     "core-js": "^2.5.4",
     "firebase": "^6.1.0",
     "ng": "^0.0.0",
@@ -80,7 +81,13 @@
       "cordova-plugin-ionic-webview": {
         "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
       },
-      "cordova-plugin-ionic-keyboard": {}
+      "cordova-plugin-ionic-keyboard": {},
+      "cordova-plugin-facebook4": {
+        "APP_ID": "673913583068118",
+        "APP_NAME": "Japanese Skill",
+        "FACEBOOK_HYBRID_APP_EVENTS": "false",
+        "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
+      }
     },
     "platforms": [
       "android"
