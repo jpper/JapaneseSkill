@@ -3,12 +3,22 @@
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Second Blank</ion-title>
+    <ion-title>Edit Decks</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  <ion-button expand="block" routerLink="/menu/second/details" routerDirection="forward">
+  <!-- <ion-button expand="block" routerLink="/menu/second/details" routerDirection="forward">
     Details forward
-  </ion-button>
+  </ion-button> -->
+
+  <ion-list class="remove-space" *ngFor="let deck of (decks | async)">
+    <ion-item [routerLink]="['/showdeck', deck.id]">
+        <ion-col>
+            <h3 class="remove-space">{{deck.title}}</h3>
+            <p class="remove-space">Difficulty level: {{deck.level}}</p>
+        </ion-col>
+    </ion-item>
+</ion-list>
+
 </ion-content>

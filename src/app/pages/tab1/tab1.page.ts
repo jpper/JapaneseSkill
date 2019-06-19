@@ -14,6 +14,9 @@ export class Tab1Page implements OnInit {
   constructor(private deckService: DeckService) { }
 
   ngOnInit() {
+  }
+
+  ionViewWillEnter() {
     this.decks = this.deckService.getDecks();
   }
 

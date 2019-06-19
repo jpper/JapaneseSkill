@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { DeckService, Deck } from 'src/app/services/deck.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-second',
@@ -6,10 +8,14 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./second.page.scss'],
 })
 export class SecondPage implements OnInit {
+  private decks: Observable<Deck[]>;
 
-  constructor() { }
+  constructor(
+    private deckService: DeckService,
+  ) { }
 
   ngOnInit() {
+    this.decks = this.deckService.getDecks();
   }
 
 }

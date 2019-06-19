@@ -14,7 +14,7 @@ export class MenuPage implements OnInit {
       url: '/menu/first'
     },
     {
-      title: 'About',
+      title: 'Edit Decks',
       url: '/menu/second'
     }
   ];
