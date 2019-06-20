@@ -35,6 +35,7 @@
     "@ionic/storage": "^2.2.0",
     "cordova-android": "8.0.0",
     "cordova-plugin-facebook4": "4.2.1",
+    "cordova-plugin-nativestorage": "2.3.2",
     "core-js": "^2.5.4",
     "firebase": "^6.1.0",
     "ng": "^0.0.0",
@@ -90,7 +91,8 @@
         "APP_NAME": "Japanese Skill",
         "FACEBOOK_HYBRID_APP_EVENTS": "false",
         "FACEBOOK_ANDROID_SDK_VERSION": "4.40.0"
-      }
+      },
+      "cordova-plugin-nativestorage": {}
     },
     "platforms": [
       "android"

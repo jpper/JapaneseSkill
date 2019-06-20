@@ -13,6 +13,7 @@ import { AngularFireAuthModule } from '@angular/fire/auth';
 import { AngularFirestoreModule } from '@angular/fire/firestore';
 
 import { Facebook } from '@ionic-native/facebook/ngx'
+import { NativeStorage } from '@ionic-native/native-storage/ngx';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA-EZWW5j1GoQagmT20lX-h5zsQp-vv-2k",
@@ -38,7 +39,8 @@ const firebaseConfig = {
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    Facebook
+    Facebook,
+    NativeStorage
   ],
   bootstrap: [AppComponent]
 })
