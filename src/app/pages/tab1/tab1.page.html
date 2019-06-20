@@ -1,55 +1,72 @@
 <ion-header>
-    <ion-toolbar color="primary">
-        <ion-buttons slot="start">
-            <ion-menu-button></ion-menu-button>
-        </ion-buttons>
-        <ion-title>Home Page</ion-title>
-    </ion-toolbar>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Home Page</ion-title>
+  </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-    <ion-refresher slot="fixed" pullFactor="0.5" (ionRefresh)="doRefresh($event)">
-        <ion-refresher-content></ion-refresher-content>
-    </ion-refresher>
+  <ion-refresher slot="fixed" pullFactor="0.5" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
 
-    <ion-list class="remove-space" *ngFor="let deck of (decks | async)">
-        <ion-item [routerLink]="['/showdeck', deck.id]">
-            <ion-col>
-                <h3 class="remove-space">{{deck.title}}</h3>
-                <p class="remove-space">Difficulty level: {{deck.level}}</p>
-            </ion-col>
-        </ion-item>
-    </ion-list>
+  <!-- <ion-card *ngIf="userData">
+    <ion-card-header>{{ userData.username }}</ion-card-header>
+    <img [src]="userData.picture">
+    <ion-card-content>
+      <p>Email: {{ userData.email }}</p>
+      <p>First Name: {{ userData.first_name }}</p>
+    </ion-card-content>
+  </ion-card> -->
 
+  <ion-card>
+    <ion-card-content>
+      <h2>Welcome, {{ user.name }}!</h2>
+    </ion-card-content>
+    <img [src]="user.picture">
+  </ion-card>
 
-    <ion-fab vertical="bottom" horizontal="end">
-        <ion-fab-button>
-            <ion-icon name="add"></ion-icon>
-        </ion-fab-button>
+  <ion-list class="remove-space" *ngFor="let deck of decks | async">
+    <ion-item [routerLink]="['/showdeck', deck.id]">
+      <ion-col>
+        <h3 class="remove-space">{{ deck.title }}</h3>
+        <p class="remove-space">Difficulty level: {{ deck.level }}</p>
+      </ion-col>
+    </ion-item>
+  </ion-list>
 
-        <ion-fab-list side="top">
-            <ion-fab-button>
-                <ion-icon name="star"></ion-icon>
-            </ion-fab-button>
-            <ion-fab-button>
-                <ion-icon name="create"></ion-icon>
-            </ion-fab-button>
-        </ion-fab-list>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
 
-        <ion-fab-list side="start">
-            <ion-fab-button routerLink="/createdeck">
-                <ion-icon name="add"></ion-icon>
-            </ion-fab-button>
-        </ion-fab-list>
+    <ion-fab-list side="top">
+      <ion-fab-button>
+        <ion-icon name="star"></ion-icon>
+      </ion-fab-button>
+      <ion-fab-button>
+        <ion-icon name="create"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
 
-    </ion-fab>
-
+    <ion-fab-list side="start">
+      <ion-fab-button routerLink="/createdeck">
+        <ion-icon name="add"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
 
 <ion-footer no-shadow>
-    <ion-toolbar position="bottom">
-        <ion-button expand="block" routerLink="/menu/first/tabs/tab1/details" routerDirection="forward">
-            Details forward
-        </ion-button>
-    </ion-toolbar>
+  <ion-toolbar position="bottom">
+    <ion-button
+      expand="block"
+      routerLink="/menu/first/tabs/tab1/details"
+      routerDirection="forward"
+    >
+      Details forward
+    </ion-button>
+  </ion-toolbar>
 </ion-footer>
